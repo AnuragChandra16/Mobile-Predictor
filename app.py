@@ -1,11 +1,18 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Add this import
 import pickle
 import os
 import pandas as pd
 from dotenv import load_dotenv
+
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app, resources={r"/predict": {
+    "origins": ["https://mobile-predictor.vercel.app"],
+    "methods": ["POST"],
+    "allow_headers": ["Content-Type"]
+}})  # Add CORS configuration
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -14,7 +21,8 @@ def predict():
     
     with open("mobile_model.pkl", "rb") as file:
         knn, df = pickle.load(file)
-       # Define get_nearest_mobile inside the function
+    
+    # Define get_nearest_mobile inside the function
     def get_nearest_mobile(price):
         nearest_mobiles = df.iloc[(df["Prices"] - price).abs().argsort()[:5]]
         best_mobile = nearest_mobiles.sort_values(by="Reviews", ascending=False).iloc[0]
