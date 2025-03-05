@@ -20,7 +20,7 @@ function App() {
 
     setError(""); // Clear any previous errors
 
-    const response = await fetch("https://mobile-1m3f.onrender.com/predict", {
+    const response = await fetch("https://mobile-predictor.onrender.com/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price }),
