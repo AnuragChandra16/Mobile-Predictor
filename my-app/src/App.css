@@ -1,0 +1,126 @@
+/* Full-screen layout */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(-45deg, #ff7eb3, #ff758c, #ff7eb3, #6a11cb, #2575fc);
+  background-size: 300% 300%;
+  animation: gradientBG 6s infinite alternate;
+  text-align: center;
+}
+
+/* Animated background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Centering the heading */
+.heading-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 34px;
+  font-weight: bold;
+  color: #019824;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: light;
+  max-width: 600px;
+  margin: 0 auto; /* Keep it centered */
+  color: #2ca0f8;
+}
+
+/* Center the main box */
+.container {
+  max-width: 500px;
+  width: 100%;
+  background: rgba(255, 151, 198, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content inside */
+  justify-content: center;
+  transform: translateX(30px);
+}
+
+/* Center the input and button */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input field */
+input {
+  padding: 10px;
+  width: 80%;
+  border: 2px solid #fff;
+  border-radius: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Button (No Rounded Corners, No Size Increase) */
+button {
+  background-color: #ff007f;
+  color: white;
+  padding: 10px;
+  width: 80%;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #d6006b;
+}
+
+/* Response Box */
+.response-box {
+  margin-top: 15px;
+  background: white;
+  color: black;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  
+}
+
+/* Make labels bold but keep details normal */
+.response-box p {
+  font-weight: normal;
+}
+
+.response-box p strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Error Box Styling */
+.error-box {
+  margin-top: 15px;
+  background: #ffcccc; /* Light red */
+  color: #d60000;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid #d60000;
+}
